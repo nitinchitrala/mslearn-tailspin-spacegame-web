@@ -26,18 +26,18 @@ steps:
   displayName: 'Run gulp tasks'
 
 - script: '"$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)"" > buildinfo.txt'
-  displaName: 'Write build info'
-  working Directory: Tailspin.SpaceGame.Web/wwwroot
+  displayName: 'Write build info'
+  workingDirectory: Tailspin.SpaceGame.Web/wwwroot
 
 - task: DotNetCoreCLI@2
-  dsiplayName: 'Restore project dependices'  
+  displayName: 'Restore project dependices'  
   inputs:
     command: 'restore'
     projects: '**/*.csproj'
 
 - task: DotNetCoreCLI@2
-    dsiplayName: 'Build project - Release'
-    inputs:
-      command: 'build'
-      arguments: '--configuration $(buildConfiguration)'  
-      projects: '**/.*csproj'
+  displayName: 'Build project - Release'
+  inputs:
+    command: 'build'
+    arguments: '--configuration $(buildConfiguration)'  
+    projects: '**/.*csproj'
