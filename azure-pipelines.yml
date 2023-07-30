@@ -25,7 +25,7 @@ steps:
 - task: gulp@1
   displayName: 'Run gulp tasks'
 
-- script: '"$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)"" > buildinfo.txt'
+- script: '"$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
   displayName: 'Write build info'
   workingDirectory: Tailspin.SpaceGame.Web/wwwroot
 
